@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 
 class AnimatedImage extends AnimatedWidget {
-  AnimatedImage({Key key, Animation<double> animation})
+  AnimatedImage({Key key, Animation<double> animation, this.image})
       : super(key: key, listenable: animation);
+
+  final Image image;
 
   @override
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return AnimatedBuilder(
       animation: animation,
-      child: InkWell(
-        child: Hero(tag: 'bird', child: Image.asset("images/bluejay.jpg")),
+      child: Hero(tag: 'bluejay', child: image),
+      builder: (context, child) => FadeTransition(
+        opacity: animation,
+        child: child,
       ),
-      builder: (context, child) =>
-          Center(
-            child: Container(
-              width: animation.value,
-              height: animation.value,
-              child: child,
-            ),
-          ),
     );
   }
 }

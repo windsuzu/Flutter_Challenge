@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'AnimatedImage.dart';
 import 'HeroAnimatedRoute.dart';
+import 'StaggerAnimationRoute.dart';
 
 class AnimationRoute extends StatelessWidget {
   @override
@@ -22,10 +22,9 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: const Duration(seconds: 1), vsync: this);
-    animation = CurvedAnimation(parent: controller, curve: Curves.ease);
-    animation = Tween(begin: 0.0, end: 200.0).animate(controller);
+    controller =
+        AnimationController(duration: Duration(milliseconds: 700), vsync: this);
+    animation = Tween(begin: 0.0, end: 1.0).animate(controller);
     controller.forward();
   }
 
@@ -37,20 +36,27 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () =>
-          Navigator.push(context,
-              PageRouteBuilder(pageBuilder: (context, animation, secondary) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: HeroAnimatedRoute(),
-                );
-              })),
-      child: AnimatedImage(
-        animation: animation,
-      ),
-    );
+    return _infoListView();
+  }
+
+  Widget _infoListView() {
+    return ListView.builder(itemBuilder: (context, index) {
+      switch (index) {
+        case 0:
+          return HeroListTile();
+        case 1:
+          return ListTile(
+            title: Text("Staggered Animation"),
+            onTap: () => Navigator.push(
+                context,
+                PageRouteBuilder(
+                    pageBuilder: (context, animation, secondary) =>
+                        FadeTransition(
+                          opacity: animation,
+                          child: StaggerAnimationRoute(),
+                        ),)),
+          );
+      }
+    });
   }
 }
-
-
