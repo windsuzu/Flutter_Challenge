@@ -37,8 +37,8 @@ This project is a practice for flutter widgets by using material [缘起 · 《F
 * Animation (AnimationController, CurvedAnimation, Tween, ...)
 * [AnimatedWidget](lib/Animation/AnimatedImage.dart)
 * [Navigator transition](lib/Animation/AnimationRoute.dart)
-* [Hero](lib/Animation/HeroAnimatedRoute.dart)
-* [StaggerAnimation](lib/Animation/StaggerAnimation.dart)
+* [Hero Animation](lib/Animation/HeroAnimatedRoute.dart)
+* [StaggerAnimation](lib/Animation/StaggerAnimationRoute.dart)
 
 ---
 ## 6. Customization
