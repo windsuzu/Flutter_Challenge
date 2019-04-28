@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:meta/meta.dart';
 import 'VideoCard.dart';
 
+/// refer: https://iirokrankka.com/2018/03/14/orchestrating-multiple-animations-into-visual-enter-animation/
+
 class StaggerAnimationRoute extends StatefulWidget {
   @override
   _StaggerAnimationRouteState createState() => _StaggerAnimationRouteState();

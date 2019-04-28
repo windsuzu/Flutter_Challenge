@@ -1,6 +1,6 @@
 # Flutter Challenge
 
-This project is a practice for flutter widgets by using material [缘起 · 《Flutter实战》](https://book.flutterchina.club/)
+This project is a practice for flutter widgets.
 
 ---
 
@@ -39,6 +39,9 @@ This project is a practice for flutter widgets by using material [缘起 · 《F
 * [Navigator transition](lib/Animation/AnimationRoute.dart)
 * [Hero Animation](lib/Animation/HeroAnimatedRoute.dart)
 * [StaggerAnimation](lib/Animation/StaggerAnimationRoute.dart)
+* [Guillotine Animation](lib/Animation/GuillotineAnimation.dart)
+* [UX Animation](lib/Animation/UXAnimationRoute.dart)
+* [Fancy Login Animation](lib/Animation/LoginAnimationRoute.dart)
 
 ---
 ## 6. Customization
